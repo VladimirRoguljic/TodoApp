@@ -42,9 +42,9 @@ export class TodoDataService {
   }
 
   toggleTodoComplete(todo: Todo) {
-    let updateTodo: this.updateTodoById(todo.id, {
+    let updateTodo =  this.updateTodoById(todo.id, {
       complete: !todo.complete
-    })
+    });
     return updateTodo;
   }
 

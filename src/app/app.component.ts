@@ -8,7 +8,6 @@ import {Todo} from "./classes/todo";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TodoApp';
   newTodo: Todo = new Todo();
   editTodo: boolean = false;
   editableTodo: Todo = new Todo();

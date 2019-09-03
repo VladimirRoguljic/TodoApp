@@ -10,6 +10,9 @@ import {Todo} from "./classes/todo";
 export class AppComponent {
   title = 'TodoApp';
   newTodo: Todo = new Todo();
+  editTodo: boolean = false;
+  editableTodo: Todo = new Todo();
+  currentIndex: number = 0;
 
   constructor(private todoDataService: TodoDataService) {
   }
@@ -28,8 +31,21 @@ export class AppComponent {
     this.todoDataService.deleteTodoById(todo.id);
   }
 
+  getIndex(i) {
+    this.currentIndex = i;
+    return this.currentIndex;
+  }
+
+
   get todos() {
     return this.todoDataService.getAllTodos();
   }
+
+  updateTodo(todo) {
+    this.todoDataService.updateTodoById(todo, this.editableTodo);
+    this.editableTodo = new Todo();
+    this.editTodo = !this.editTodo;
+  }
+
 
 }

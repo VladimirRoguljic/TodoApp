@@ -54,6 +54,12 @@ body {
   margin: 130px auto 40px auto;
 }
 
+.view span {
+  margin-top: -45px;
+  right: 50px;
+  position: absolute;
+}
+
 .todoapp input::-webkit-input-placeholder {
   font-style: italic;
   font-weight: 300;
